@@ -4,19 +4,14 @@
 			大学习
 		</div>
 		<br>
-		<router-link to="/season">
-			<v-ons-card v-for="season in seasons" :key="season.id">
-				<div class="title">第{{season.id}}期</div>
-				<div class="content">
-					this is first volume
-				</div>
-			</v-ons-card>
+		<router-link to="/season" v-for="season in seasons" :key="season.id">
+			<season-item :season="season"></season-item>
 		</router-link>
 	</v-ons-page>
 </template>
 
 <script>
-import SeasonItem from '../components/home/SeasonItem.vue' 
+import SeasonItem from '../components/SeasonItem.vue' 
 
 export default {
 	name: 'home',
@@ -24,8 +19,19 @@ export default {
 	data() {
 		return {
 			seasons: [
-				{id: 1, val: 'a'},
-				{id: 2, val: 'b'}
+				{
+					id: 1,
+					title: '第一季',
+					content: '第一季说明第一季说明'
+				}, {
+					id: 2,
+					title: '第二季',
+					content: '第二季说明第二季说明'
+				}, {
+					id: 3,
+					title: '第三季',
+					content: '第三季说明第三季说明'
+				}
 			]
 		}
 	}

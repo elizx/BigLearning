@@ -1,0 +1,145 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "材料一",
+            "content": "this is the content",
+            "attachments": [
+                {
+                    "id": 1,
+                    "type": 1,
+                    "address": ""
+                }, {
+                    "id": 2,
+                    "type": 2,
+                    "address": ""
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "content": "问题问题问题问题",
+                    "correct_key": "A",
+                    "options": [
+                        {
+                            "id": 1,
+                            "key": "A",
+                            "value": "选项A"
+                        }, {
+                            "id": 2,
+                            "key": "B",
+                            "value": "选项B"
+                        }, {
+                            "id": 3,
+                            "key": "C",
+                            "value": "选项C"
+                        }, {
+                            "id": 4,
+                            "key": "D",
+                            "value": "选项D"
+                        }
+                    ]
+                }, 
+                {
+                    "id": 2,
+                    "content": "问题问题问题问题",
+                    "correct_key": "B",
+                    "options": [
+                        {
+                            "id": 1,
+                            "key": "A",
+                            "value": "选项A"
+                        }, {
+                            "id": 2,
+                            "key": "B",
+                            "value": "选项B"
+                        }, {
+                            "id": 3,
+                            "key": "C",
+                            "value": "选项C"
+                        }, {
+                            "id": 4,
+                            "key": "D",
+                            "value": "选项D"
+                        }
+                    ]
+                }
+            ],
+            "extra": {
+                "name": "拓展",
+                "content": "this is extra data",
+                "attachments": []
+            }
+        }, {
+            "id": 2,
+            "name": "材料二",
+            "content": "this is the content",
+            "attachments": [
+                {
+                    "id": 1,
+                    "type": 1,
+                    "address": ""
+                }, {
+                    "id": 2,
+                    "type": 2,
+                    "address": ""
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "content": "问题问题问题问题",
+                    "correct_key": "A",
+                    "options": [
+                        {
+                            "id": 1,
+                            "key": "A",
+                            "value": "选项A"
+                        }, {
+                            "id": 2,
+                            "key": "B",
+                            "value": "选项B"
+                        }, {
+                            "id": 3,
+                            "key": "C",
+                            "value": "选项C"
+                        }, {
+                            "id": 4,
+                            "key": "D",
+                            "value": "选项D"
+                        }
+                    ]
+                }, 
+                {
+                    "id": 2,
+                    "content": "问题问题问题问题",
+                    "correct_key": "B",
+                    "options": [
+                        {
+                            "id": 1,
+                            "key": "A",
+                            "value": "选项A"
+                        }, {
+                            "id": 2,
+                            "key": "B",
+                            "value": "选项B"
+                        }, {
+                            "id": 3,
+                            "key": "C",
+                            "value": "选项C"
+                        }, {
+                            "id": 4,
+                            "key": "D",
+                            "value": "选项D"
+                        }
+                    ]
+                }
+            ],
+            "extra": {
+                "name": "拓展",
+                "content": "this is extra data",
+                "attachments": []
+            }
+        }
+    ]
+}
