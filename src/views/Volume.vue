@@ -6,9 +6,10 @@
             <el-step title="完成" :key="materials.length"></el-step>
         </el-steps>
         <div>
-            <material-item :material="material" v-show="index == active_step - 1" v-for="(material, index) in materials" :key="index"/>
+            <material-item v-for="(material, index) in materials" :key="index"
+                 :material="material" v-show="index == active_step - 1"/>
             <v-ons-card v-show="showScore">
-                <div class="title">得分：99</div>
+                <div class="title">得分：{{score}}</div>
             </v-ons-card>
         </div>
         <section class="bottom-btns">
@@ -31,7 +32,8 @@ export default {
         return {
             active_step: 1,
             materials: [],
-            showScore: false
+            showScore: false,
+            score: 0
         }
     },
     mounted() {
@@ -43,6 +45,17 @@ export default {
                 this.materials = resp.data.data
             })
         },
+        computeScore() {
+            let question_sum = 0
+            let correct_sum = 0
+            this.materials.forEach(m => {
+                m.questions.forEach(e => {
+                    question_sum++
+                    if (e.correct_key == e.answer_key) correct_sum++
+                })
+            })
+            this.score = (100 * (correct_sum / question_sum)).toFixed(1)
+        },
         share() {
 
         }
@@ -51,6 +64,7 @@ export default {
         active_step(nv, ov) {
             if(nv == this.materials.length + 1) {
                 this.showScore = true
+                this.computeScore()
             } else {
                 this.showScore = false
             }

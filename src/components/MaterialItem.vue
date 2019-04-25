@@ -8,9 +8,10 @@
             <v-ons-list v-for="question in material.questions" :key="question.id">
                 <v-ons-list-header>{{question.content}}</v-ons-list-header>
                 <v-ons-list-item modifier="longdivider" v-for="(option, index) in question.options" :key="index">
-                    <label class="center" :for="`radio-${index}`">{{option.key}}. {{option.value}}</label>
+                    <label class="center" :for="`radio-${material.id}-${question.id}-${index}`">{{option.key}}. {{option.value}}</label>
                     <label class="right">
-                        <v-ons-radio :input-id="`radio-${index}`" v-model="test" :value="option.key"></v-ons-radio>
+                        <v-ons-radio :input-id="`radio-${material.id}-${question.id}-${index}`"
+                            v-model="question.answer_key" :value="option.key"></v-ons-radio>
                     </label>
                 </v-ons-list-item>
             </v-ons-list>
@@ -27,11 +28,6 @@
 <script>
 export default {
     name: 'MaterialItem',
-    props: ['material'],
-    data() {
-        return {
-            test: 0
-        }
-    }
+    props: ['material']
 }
 </script>
