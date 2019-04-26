@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { http } from "../api/config";
+import { http } from "../api/config"
 import MaterialItem from '../components/MaterialItem'
 
 export default {
@@ -41,7 +41,7 @@ export default {
     },
     methods: {
         fetchData() {
-            http.get("http://127.0.0.1:8080/fake/FakeMaterials.json").then(resp => {
+            http.get("/fake/FakeMaterials.json").then(resp => {
                 this.materials = resp.data.data
             })
         },

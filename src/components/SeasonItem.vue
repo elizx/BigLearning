@@ -15,6 +15,3 @@ export default {
     props: ['season']
 }
 </script>
-
-<style scoped>
-</style>

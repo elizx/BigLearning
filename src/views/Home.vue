@@ -4,13 +4,16 @@
 			大学习
 		</div>
 		<br>
-		<router-link to="/season" v-for="season in seasons" :key="season.id">
-			<season-item :season="season"></season-item>
-		</router-link>
+		<div>
+			<router-link to="/season" v-for="season in seasons" :key="season.id">
+				<season-item :season="season"/>
+			</router-link>
+		</div>
 	</v-ons-page>
 </template>
 
 <script>
+import { http } from "../api/config"
 import SeasonItem from '../components/SeasonItem.vue' 
 
 export default {
@@ -18,21 +21,18 @@ export default {
 	components: { SeasonItem },
 	data() {
 		return {
-			seasons: [
-				{
-					id: 1,
-					title: '第一季',
-					content: '第一季说明第一季说明'
-				}, {
-					id: 2,
-					title: '第二季',
-					content: '第二季说明第二季说明'
-				}, {
-					id: 3,
-					title: '第三季',
-					content: '第三季说明第三季说明'
-				}
-			]
+			seasons: []
+		}
+	},
+	mounted() {
+		this.fetchData()
+	},
+	methods: {
+		fetchData() {
+			http.get("/fake/FakeSeasons.json").then(resp => {
+				this.seasons = resp.data.data
+				console.log(this.seasons)
+			})
 		}
 	}
 }
