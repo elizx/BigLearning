@@ -67,6 +67,9 @@ export default {
                 this.computeScore()
             } else {
                 this.showScore = false
+                this.$nextTick(() => {
+                    document.querySelector(".page").scrollTop = 0
+                })
             }
         }
     },
