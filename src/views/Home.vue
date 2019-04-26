@@ -31,7 +31,6 @@ export default {
 		fetchData() {
 			http.get("/fake/FakeSeasons.json").then(resp => {
 				this.seasons = resp.data.data
-				console.log(this.seasons)
 			})
 		}
 	}
