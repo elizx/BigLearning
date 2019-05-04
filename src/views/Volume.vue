@@ -24,9 +24,11 @@
 <script>
 import { http } from "../api/config"
 import MaterialItem from '../components/MaterialItem'
+import wxapi from '../mixin/wxapi'
 
 export default {
     name: 'Volume',
+    mixins: [wxapi],
     components: {MaterialItem},
     data() {
         return {
