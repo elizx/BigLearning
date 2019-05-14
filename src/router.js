@@ -15,11 +15,11 @@ export default new Router({
       name: 'home',
       component: Home
     }, {
-      path: '/season',
+      path: '/season/:id',
       name: 'season',
       component: Season
     }, {
-      path: '/volume',
+      path: '/volume/:id',
       name: 'volume',
       component: Volume
     }

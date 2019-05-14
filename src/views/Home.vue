@@ -5,7 +5,7 @@
 		</div>
 		<br>
 		<div>
-			<router-link to="/season" v-for="season in seasons" :key="season.id">
+			<router-link :to="'/season/' + season.id" v-for="season in seasons" :key="season.id">
 				<season-item :season="season"/>
 			</router-link>
 		</div>

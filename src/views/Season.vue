@@ -1,7 +1,7 @@
 <template>
     <v-ons-page>
         <div>
-            <router-link to="/volume" v-for="volume in volumes" :key="volume.id">
+            <router-link :to="'/volume/' + volume.id" v-for="volume in volumes" :key="volume.id">
                 <volume-item :volume="volume"/>
             </router-link>
         </div>
@@ -22,6 +22,8 @@ export default {
     },
     mounted() {
         this.fetchData()
+        console.log(this.$route)
+        console.log(this.$route.params.id)
     },
     methods: {
         fetchData() {
